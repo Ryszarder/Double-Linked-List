@@ -8,7 +8,7 @@ public:
 	{
 		T m_data;
 		Node* m_pNext;
-		Node* m_Prev;
+		Node* m_pPrev;
 	};
 
 	LinkedList()
@@ -17,12 +17,12 @@ public:
 		m_pEnd = new Node();
 
 		m_pStart->m_pNext = m_pEnd;
-		m_pStart->m_Prev = nullptr;
+		m_pStart->m_pPrev = nullptr;
 		
 		m_pEnd->m_pNext = nullptr;
-		m_pEnd->m_Prev = m_pStart;
+		m_pEnd->m_pPrev = m_pStart;
 
-		int count = 0;
+		count = 0;
 	}
 
 	~LinkedList()
@@ -37,9 +37,10 @@ public:
 		pNewNode->m_data = value;
 
 		pNewNode->m_pNext = m_pEnd;
-		pNewNode->m_Prev = m_pEnd->m_Prev;
-		m_pEnd->m_Prev->m_pNext = pNewNode;
-		m_pEnd->m_Prev = pNewNode;
+		pNewNode->m_pPrev = m_pEnd->m_pPrev;
+		m_pEnd->m_pPrev->m_pNext = pNewNode;
+		m_pEnd->m_pPrev = pNewNode;
+		count++;
 	}
 
 	void Insert(T search, T value)
@@ -51,8 +52,10 @@ public:
 
 		pNewNode->m_pNext = itter->m_pNext;
 		pNewNode->m_pPrev = itter;
-		itter->m_pNect->m_pPrev = pNewNode;
+		itter->m_pNext->m_pPrev = pNewNode;
 		itter->m_pNext = pNewNode;
+
+		count++;
 	}
 
 	void Remove(T value)
@@ -65,6 +68,8 @@ public:
 		pNext->m_pPrev = pPrev;
 
 		delete pNodeToRemove;
+
+		--count;
 	}
 
 	void RemoveAt(int nIndex)
@@ -85,6 +90,11 @@ public:
 			pCurrent = pCurrent->m_pNext;
 		}
 		return nullptr;
+	}
+
+	int GetCount()
+	{
+		return count;
 	}
 
 private:
