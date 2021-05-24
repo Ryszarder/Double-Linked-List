@@ -58,6 +58,16 @@ public:
 		count++;
 	}
 
+	void InsertStart(T value)
+	{
+
+	}
+
+	void InsertEnd(T value)
+	{
+
+	}
+
 	void Remove(T value)
 	{
 		Node* pNodeToRemove = Find(value);
@@ -72,9 +82,34 @@ public:
 		--count;
 	}
 
-	void RemoveAt(int nIndex)
+	void RemoveStart()
 	{
+		Node* pNodeStart = m_pStart->m_pNext;
 
+		Node* pPrev = pNodeStart->m_pPrev;
+		Node* pNext = pNodeStart->m_pNext;
+
+		pPrev->m_pNext = pNext;
+		pNext->m_pPrev = pPrev;
+
+		delete pNodeStart;
+
+		--count;
+	}
+
+	void RemoveEnd()
+	{
+		Node* pNodeEnd = m_pEnd->m_pPrev;
+
+		Node* pPrev = pNodeEnd->m_pPrev;
+		Node* pNext = pNodeEnd->m_pNext;
+
+		pPrev->m_pNext = pNext;
+		pNext->m_pPrev = pPrev;
+
+		delete pNodeEnd;
+
+		--count;
 	}
 
 	Node* Find(T value)

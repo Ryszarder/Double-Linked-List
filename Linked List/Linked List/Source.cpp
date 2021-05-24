@@ -20,6 +20,10 @@ int main()
 
 	std::cout << List.GetCount() << std::endl;
 
+	List.RemoveStart();
+
+	std::cout << List.GetCount() << std::endl;
+
 	List.Print();
 	return 0;
 }
