@@ -4,6 +4,13 @@ template <typename T>
 class LinkedList
 {
 public:
+	struct Node
+	{
+		T m_data;
+		Node* m_pNext;
+		Node* m_Prev;
+	};
+
 	LinkedList()
 	{
 		m_pStart = new Node();
@@ -81,13 +88,6 @@ public:
 	}
 
 private:
-	struct Node
-	{
-		T m_data;
-		Node* m_pNext;
-		Node* m_Prev;
-	};
-
 	Node* m_pStart;
 	Node* m_pEnd;
 
