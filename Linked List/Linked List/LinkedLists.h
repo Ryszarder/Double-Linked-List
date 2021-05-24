@@ -97,6 +97,16 @@ public:
 		return count;
 	}
 
+	void Print()
+	{
+		Node* n = m_pStart->m_pNext;
+		while (n != m_pEnd)
+		{
+			std::cout << (n->m_data) << std::endl;
+			n = n->m_pNext;
+		}
+	}
+
 private:
 	Node* m_pStart;
 	Node* m_pEnd;
