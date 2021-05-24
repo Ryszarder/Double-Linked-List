@@ -60,12 +60,32 @@ public:
 
 	void InsertStart(T value)
 	{
+		Node* itter = m_pStart;
 
+		Node* pNewNode = new Node();
+		pNewNode->m_data = value;
+
+		pNewNode->m_pNext = itter->m_pNext;
+		pNewNode->m_pPrev = itter;
+		itter->m_pNext->m_pPrev = pNewNode;
+		itter->m_pNext = pNewNode;
+
+		count++;
 	}
 
 	void InsertEnd(T value)
 	{
+		Node* itter = m_pEnd;
 
+		Node* pNewNode = new Node();
+		pNewNode->m_data = value;
+
+		pNewNode->m_pPrev = itter->m_pPrev;
+		pNewNode->m_pNext = itter;
+		itter->m_pPrev->m_pNext = pNewNode;
+		itter->m_pPrev = pNewNode;
+
+		count++;
 	}
 
 	void Remove(T value)
