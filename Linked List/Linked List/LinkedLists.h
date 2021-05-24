@@ -147,8 +147,14 @@ public:
 		return nullptr;
 	}
 
-	int GetCount()
+	bool GetCount()
 	{
+		while (count == 0)
+		{
+			std::cout << "List is empty" << std::endl;
+			return 0;
+		}
+		std::cout << "List is storing data" << std::endl;
 		return count;
 	}
 

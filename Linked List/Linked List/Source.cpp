@@ -28,9 +28,11 @@ int main()
 
 	//std::cout << List.GetCount() << std::endl;
 
-	List.InsertEnd(7);
+	//List.InsertEnd(7);
 
 	//std::cout << List.GetCount() << std::endl;
+
+	List.GetCount();
 
 	List.Print();
 	return 0;
