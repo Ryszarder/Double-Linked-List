@@ -97,6 +97,12 @@ int main()
 		std::cout << "PopFront: " << m_nMyDeque << std::endl;
 	}
 
+	while (!myDeque.Empty())
+	{
+		int m_nMyDeque = myDeque.PopBack();
+		std::cout << "PopFront: " << m_nMyDeque << std::endl;
+	}
+
 
 	return 0;
 }

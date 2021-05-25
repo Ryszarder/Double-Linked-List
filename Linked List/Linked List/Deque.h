@@ -32,8 +32,8 @@ public:
 
 	T PopBack()
 	{
-		T value = m_Data[m_Data.GetCount() - 1];
-		m_Data.RemoveStart(m_Data.GetCount() - 1);
+		T value = m_Data.GetLastNode()->m_Data;
+		m_Data.RemoveEnd();
 
 		return value;
 	}
