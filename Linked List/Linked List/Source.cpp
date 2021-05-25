@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <crtdbg.h>
 #include "LinkedLists.h"
 #include "DynamicArray.h"
 #include "Stack.h"
@@ -7,6 +8,7 @@
 
 int main()
 {
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	/*LinkedList<int> List;
 	List.AddBack(2);
 	List.AddBack(5);
@@ -44,7 +46,9 @@ int main()
 
 	List.Print();*/
 
-	/*DynamicArray<int> myArray(3);
+
+
+	DynamicArray<int> myArray(3);
 	myArray.Add(5);
 	myArray.Add(2);
 	myArray.Add(1);
@@ -58,17 +62,19 @@ int main()
 	for (int i = 0; i < myArray.GetSize(); i++)
 	{
 		std::cout << myArray[i] << std::endl;
-	}*/
+	}
 
-	Stack<int> myStack;
 
-	myStack.Push(5);
-	myStack.Push(8);
-	myStack.Push(10);
+
+	/*Stack<int> myStack;
+
+	myStack.Push(0);
+	myStack.Push(1);
 	myStack.Push(2);
-	myStack.Push(15);
+	myStack.Push(3);
+	myStack.Push(4);
 
-	/*while (!myStack.Empty())
+	while (!myStack.Empty())
 	{
 		int m_nStackArray = myStack.Pop();
 		std::cout << "Push: " << m_nStackArray << std::endl;

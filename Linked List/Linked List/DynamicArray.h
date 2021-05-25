@@ -1,10 +1,10 @@
 #pragma once
 #include <memory>
-template<typename T>
+template <typename T>
 class DynamicArray
 {
 public:
-	DynamicArray(int nInitialSize = 0)
+	DynamicArray(int nInitialSize = 1)
 	{
 		m_pData = new T[nInitialSize];
 		m_nCapicity = nInitialSize;
