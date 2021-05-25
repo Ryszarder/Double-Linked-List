@@ -9,22 +9,21 @@ int main()
 	List.AddBack(5);
 	List.AddBack(6);
 	List.AddBack(8);
-	
+	List.AddBack(3);
+	List.AddBack(9);
+	List.AddBack(4);
 
 	List.Remove(5);
 
+	List.RemoveStart();
+
+	List.RemoveEnd();
 
 	List.Insert(6, 10);
 
-
-	List.RemoveStart();
-
-
 	List.InsertStart(4);
 
-
 	List.InsertEnd(7);
-
 
 	List.GetCount();
 
@@ -47,6 +46,7 @@ int main()
 
 	std::cout << "Last Node is: " << List.GetLastNode()->m_Data << std::endl;
 
-	//List.Print();
+	List.Print();
+
 	return 0;
 }
