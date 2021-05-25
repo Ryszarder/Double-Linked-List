@@ -10,31 +10,34 @@ int main()
 	List.AddBack(6);
 	List.AddBack(8);
 	
-	//std::cout << List.GetCount() << std::endl;
 
-	//List.Remove(5);
+	List.Remove(5);
 
-	//std::cout << List.GetCount() << std::endl;
 
-	//List.Insert(6, 10);
+	List.Insert(6, 10);
 
-	//std::cout << List.GetCount() << std::endl;
 
-	//List.RemoveStart();
+	List.RemoveStart();
 
-	//std::cout << List.GetCount() << std::endl;
 
-	//List.InsertStart(4);
+	List.InsertStart(4);
 
-	//std::cout << List.GetCount() << std::endl;
 
-	//List.InsertEnd(7);
+	List.InsertEnd(7);
 
-	//std::cout << List.GetCount() << std::endl;
 
 	List.GetCount();
 
 	std::cout << "Count is: " << List.GetCount() << std::endl;
+
+	if (List.Empty())
+	{
+		std::cout << "Empty" << std::endl;
+	}
+	else
+	{
+		std::cout << "Not empty" << std::endl;
+	}
 
 	List.GetFirstNode();
 
