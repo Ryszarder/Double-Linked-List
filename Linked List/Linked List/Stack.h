@@ -28,7 +28,7 @@ public:
 	T Top()
 	{
 		T value = m_Data[m_Data.GetSize() - 1];
-		return value
+		return value;
 	}
 
 	int Size()
@@ -36,6 +36,11 @@ public:
 		return m_Data.GetSize();
 	}
 
+	bool Empty()
+	{
+		return (m_Data.GetSize() == 0);
+	}
+
 private:
-	DynmicArray<T> m_Data;
+	DynamicArray<T> m_Data;
 };

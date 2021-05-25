@@ -1,17 +1,17 @@
 #pragma once
 #include <memory>
 template<typename T>
-class DynmicArray
+class DynamicArray
 {
 public:
-	DynmicArray(int nInitialSize = 0)
+	DynamicArray(int nInitialSize = 0)
 	{
 		m_pData = new T[nInitialSize];
 		m_nCapicity = nInitialSize;
 		m_nUsed = 0;
 	}
 
-	~DynmicArray()
+	~DynamicArray()
 	{
 		delete[] m_pData;
 		m_pData = nullptr;
@@ -19,10 +19,10 @@ public:
 
 	void Add(T value)
 	{
-		CheckForResize()
+		CheckForResize();
 
 		m_pData[m_nUsed] = value;
-		++m_nUsed
+		++m_nUsed;
 	}
 
 	void Insert(int nIndex, T value)
@@ -57,7 +57,7 @@ public:
 				m_pData[m_nUsed - 1] = 0;
 			}
 		}
-		--m_nUsed
+		--m_nUsed;
 	}
 
 	int Find(T value)
