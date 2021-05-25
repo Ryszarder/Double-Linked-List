@@ -6,7 +6,7 @@ class LinkedList
 public:
 	struct Node
 	{
-		T m_data;
+		T m_Data;
 		Node* m_pNext;
 		Node* m_pPrev;
 	};
@@ -34,7 +34,7 @@ public:
 	void AddBack(T value)
 	{
 		Node* pNewNode = new Node();
-		pNewNode->m_data = value;
+		pNewNode->m_Data = value;
 
 		pNewNode->m_pNext = m_pEnd;
 		pNewNode->m_pPrev = m_pEnd->m_pPrev;
@@ -48,7 +48,7 @@ public:
 		Node* itter = Find(search);
 
 		Node* pNewNode = new Node();
-		pNewNode->m_data = value;
+		pNewNode->m_Data = value;
 
 		pNewNode->m_pNext = itter->m_pNext;
 		pNewNode->m_pPrev = itter;
@@ -63,7 +63,7 @@ public:
 		Node* itter = m_pStart;
 
 		Node* pNewNode = new Node();
-		pNewNode->m_data = value;
+		pNewNode->m_Data = value;
 
 		pNewNode->m_pNext = itter->m_pNext;
 		pNewNode->m_pPrev = itter;
@@ -78,7 +78,7 @@ public:
 		Node* itter = m_pEnd;
 
 		Node* pNewNode = new Node();
-		pNewNode->m_data = value;
+		pNewNode->m_Data = value;
 
 		pNewNode->m_pPrev = itter->m_pPrev;
 		pNewNode->m_pNext = itter;
@@ -137,7 +137,7 @@ public:
 		Node* pCurrent = m_pStart->m_pNext;
 		while (pCurrent != m_pEnd)
 		{
-			if (pCurrent->m_data == value)
+			if (pCurrent->m_Data == value)
 			{
 				return pCurrent;
 			}
@@ -147,15 +147,28 @@ public:
 		return nullptr;
 	}
 
-	bool GetCount()
+	int GetCount()
 	{
-		while (count == 0)
-		{
-			std::cout << "List is empty" << std::endl;
-			return 0;
-		}
-		std::cout << "List is storing data" << std::endl;
 		return count;
+	}
+
+	bool Empty()
+	{
+		return (count == 0);
+	}
+
+	Node* GetFirstNode()
+	{
+		//Node* pFirstNode = m_pStart->m_pNext;
+		//return pFirstNode;
+		return m_pStart->m_pNext;
+	}
+	
+	Node* GetLastNode()
+	{
+		//Node* pSecondNode = m_pEnd->m_pPrev;
+		//return pSecondNode;
+		return m_pEnd->m_pPrev;
 	}
 
 	void Print()
@@ -163,7 +176,7 @@ public:
 		Node* n = m_pStart->m_pNext;
 		while (n != m_pEnd)
 		{
-			std::cout << (n->m_data) << std::endl;
+			std::cout << (n->m_Data) << std::endl;
 			n = n->m_pNext;
 		}
 	}

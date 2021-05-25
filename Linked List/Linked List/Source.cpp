@@ -34,6 +34,16 @@ int main()
 
 	List.GetCount();
 
-	List.Print();
+	std::cout << "Count is: " << List.GetCount() << std::endl;
+
+	List.GetFirstNode();
+
+	std::cout << "First Node is: " << List.GetFirstNode()->m_Data << std::endl;
+
+	List.GetLastNode();
+
+	std::cout << "Last Node is: " << List.GetLastNode()->m_Data << std::endl;
+
+	//List.Print();
 	return 0;
 }
