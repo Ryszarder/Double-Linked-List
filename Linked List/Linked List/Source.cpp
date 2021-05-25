@@ -48,7 +48,7 @@ int main()
 
 
 
-	DynamicArray<int> myArray(3);
+	/*DynamicArray<int> myArray(3);
 	myArray.Add(5);
 	myArray.Add(2);
 	myArray.Add(1);
@@ -62,7 +62,7 @@ int main()
 	for (int i = 0; i < myArray.GetSize(); i++)
 	{
 		std::cout << myArray[i] << std::endl;
-	}
+	}*/
 
 
 
@@ -77,8 +77,26 @@ int main()
 	while (!myStack.Empty())
 	{
 		int m_nStackArray = myStack.Pop();
-		std::cout << "Push: " << m_nStackArray << std::endl;
+		std::cout << "Pop: " << m_nStackArray << std::endl;
 	}*/
+
+	Deque<int> myDeque;
+
+	myDeque.PushFront(0);
+	myDeque.PushFront(1);
+	myDeque.PushFront(2);
+	myDeque.PushFront(20);
+	myDeque.PushBack(4);
+	myDeque.PushBack(5);
+	myDeque.PushBack(10);
+	myDeque.PushBack(7);
+
+	while (!myDeque.Empty())
+	{
+		int m_nMyDeque = myDeque.PopFront();
+		std::cout << "PopFront: " << m_nMyDeque << std::endl;
+	}
+
 
 	return 0;
 }
