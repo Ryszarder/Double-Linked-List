@@ -159,15 +159,11 @@ public:
 
 	Node* GetFirstNode()
 	{
-		//Node* pFirstNode = m_pStart->m_pNext;
-		//return pFirstNode;
 		return m_pStart->m_pNext;
 	}
 	
 	Node* GetLastNode()
 	{
-		//Node* pSecondNode = m_pEnd->m_pPrev;
-		//return pSecondNode;
 		return m_pEnd->m_pPrev;
 	}
 
@@ -178,6 +174,36 @@ public:
 		{
 			std::cout << (n->m_Data) << std::endl;
 			n = n->m_pNext;
+		}
+	}
+
+	void Swap(Node* B, Node* C)
+	{
+		//A -> B -> C -> D
+		Node* A = B->m_pPrev;
+		Node* D = C->m_pNext;
+
+		A->m_pNext = C;
+		C->m_pPrev = A;
+
+		C->m_pNext = B;
+		B->m_pPrev = C;
+
+		B->m_pNext = D;
+		D->m_pPrev = B;
+	}
+
+	void Sort()
+	{
+		for (int i = 1; i < count; ++i)
+		{
+			Node* key = Find(i);
+			int j = i - 1;
+			Node* comp = Find(j);
+			while (j >= 0 && comp > key)
+			{
+				Swap(comp, key);
+			}
 		}
 	}
 
