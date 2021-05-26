@@ -19,31 +19,31 @@ int main()
 	List.AddBack(1);
 	List.AddBack(4);
 	
-	/*List.Remove(5);
+	List.Remove(5);
 
-	List.RemoveStart();
+	//List.RemoveStart();
 
-	List.RemoveEnd();
+	//List.RemoveEnd();
 
-	List.Insert(6, 10);
+	//List.Insert(6, 10);
 
-	List.InsertStart(13);
+	//List.InsertStart(13);
 
-	List.InsertEnd(9);
+	//List.InsertEnd(9);
 
-	List.GetCount();
-	std::cout << "Count is: " << List.GetCount() << std::endl;
+	//List.GetCount();
+	//std::cout << "Count is: " << List.GetCount() << std::endl;
 
-	if (List.Empty())
-		std::cout << "Empty" << std::endl;
-	else
-		std::cout << "Not empty" << std::endl;
+	//if (List.Empty())
+	//	std::cout << "Empty" << std::endl;
+	//else
+	//	std::cout << "Not empty" << std::endl;
 
-	List.GetFirstNode();
-	std::cout << "First Node is: " << List.GetFirstNode()->m_Data << std::endl;
+	//List.GetFirstNode();
+	//std::cout << "First Node is: " << List.GetFirstNode()->m_Data << std::endl;
 
-	List.GetLastNode();
-	std::cout << "Last Node is: " << List.GetLastNode()->m_Data << std::endl;*/
+	//List.GetLastNode();
+	//std::cout << "Last Node is: " << List.GetLastNode()->m_Data << std::endl;
 
 	List.Sort();
 
