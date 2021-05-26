@@ -201,7 +201,7 @@ public:
 		D->m_pPrev = B;
 	}
 
-	void Sort(int count)
+	void Sort()
 	{
 		Node* key;
 		Node* comp;

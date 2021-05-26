@@ -19,7 +19,7 @@ int main()
 	List.AddBack(1);
 	List.AddBack(4);
 	
-	List.Remove(5);
+	/*List.Remove(5);
 
 	List.RemoveStart();
 
@@ -43,9 +43,9 @@ int main()
 	std::cout << "First Node is: " << List.GetFirstNode()->m_Data << std::endl;
 
 	List.GetLastNode();
-	std::cout << "Last Node is: " << List.GetLastNode()->m_Data << std::endl;
+	std::cout << "Last Node is: " << List.GetLastNode()->m_Data << std::endl;*/
 
-	List.Sort(List.GetCount());
+	List.Sort();
 
 	List.Print();
 
