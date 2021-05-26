@@ -38,8 +38,10 @@ public:
 
 		pNewNode->m_pNext = m_pEnd;
 		pNewNode->m_pPrev = m_pEnd->m_pPrev;
+
 		m_pEnd->m_pPrev->m_pNext = pNewNode;
 		m_pEnd->m_pPrev = pNewNode;
+
 		count++;
 	}
 
@@ -52,6 +54,7 @@ public:
 
 		pNewNode->m_pNext = itter->m_pNext;
 		pNewNode->m_pPrev = itter;
+
 		itter->m_pNext->m_pPrev = pNewNode;
 		itter->m_pNext = pNewNode;
 
@@ -67,6 +70,7 @@ public:
 
 		pNewNode->m_pNext = itter->m_pNext;
 		pNewNode->m_pPrev = itter;
+
 		itter->m_pNext->m_pPrev = pNewNode;
 		itter->m_pNext = pNewNode;
 
@@ -82,6 +86,7 @@ public:
 
 		pNewNode->m_pPrev = itter->m_pPrev;
 		pNewNode->m_pNext = itter;
+
 		itter->m_pPrev->m_pNext = pNewNode;
 		itter->m_pPrev = pNewNode;
 
@@ -94,6 +99,7 @@ public:
 
 		Node* pPrev = pNodeToRemove->m_pPrev;
 		Node* pNext = pNodeToRemove->m_pNext;
+
 		pPrev->m_pNext = pNext;
 		pNext->m_pPrev = pPrev;
 
@@ -141,7 +147,6 @@ public:
 			{
 				return pCurrent;
 			}
-
 			pCurrent = pCurrent->m_pNext;
 		}
 		return nullptr;
@@ -157,8 +162,17 @@ public:
 
 			pCurrent = pCurrent->m_pNext;
 		}
-
 		return pCurrent;
+	}
+
+	Node* GetFirstNode()
+	{
+		return m_pStart->m_pNext;
+	}
+
+	Node* GetLastNode()
+	{
+		return m_pEnd->m_pPrev;
 	}
 
 	int GetCount()
@@ -169,26 +183,6 @@ public:
 	bool Empty()
 	{
 		return (count == 0);
-	}
-
-	Node* GetFirstNode()
-	{
-		return m_pStart->m_pNext;
-	}
-	
-	Node* GetLastNode()
-	{
-		return m_pEnd->m_pPrev;
-	}
-
-	void Print()
-	{
-		Node* n = m_pStart->m_pNext;
-		while (n != m_pEnd)
-		{
-			std::cout << (n->m_Data) << std::endl;
-			n = n->m_pNext;
-		}
 	}
 
 	void Swap(Node* B, Node* C)
@@ -224,6 +218,16 @@ public:
 				j = j - 1;
 				comp = GetNode(j);
 			}
+		}
+	}
+
+	void Print()
+	{
+		Node* n = m_pStart->m_pNext;
+		while (n != m_pEnd)
+		{
+			std::cout << (n->m_Data) << std::endl;
+			n = n->m_pNext;
 		}
 	}
 
