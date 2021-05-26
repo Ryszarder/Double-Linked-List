@@ -147,6 +147,20 @@ public:
 		return nullptr;
 	}
 
+	Node* GetNode(int nIndex)
+	{
+		Node* pCurrent = m_pStart->m_pNext;
+		for (int i = 0; i < nIndex; i++)
+		{
+			if (i == nIndex)
+				return pCurrent;
+
+			pCurrent = pCurrent->m_pNext;
+		}
+
+		return pCurrent;
+	}
+
 	int GetCount()
 	{
 		return count;
@@ -177,8 +191,6 @@ public:
 		}
 	}
 
-
-
 	void Swap(Node* B, Node* C)
 	{
 		//A -> B -> C -> D
@@ -203,14 +215,14 @@ public:
 
 		for (int i = 1; i < count; ++i)
 		{
-			key = Find(i);
+			key = GetNode(i);
 			j = i - 1;
-			comp = Find(j);
-			while (j >= 0 && comp->m_Data > key->m_Data)
+			comp = GetNode(j);
+			while (j >= 0 && key->m_Data < comp->m_Data)
 			{
-				Swap(key, comp);
+				Swap(GetNode(j), GetNode(j + 1));
 				j = j - 1;
-				comp = Find(j);
+				comp = GetNode(j);
 			}
 		}
 	}
