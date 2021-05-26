@@ -177,6 +177,8 @@ public:
 		}
 	}
 
+
+
 	void Swap(Node* B, Node* C)
 	{
 		//A -> B -> C -> D
@@ -193,16 +195,22 @@ public:
 		D->m_pPrev = B;
 	}
 
-	void Sort()
+	void Sort(int count)
 	{
+		Node* key;
+		Node* comp;
+		int j;
+
 		for (int i = 1; i < count; ++i)
 		{
-			Node* key = Find(i);
-			int j = i - 1;
-			Node* comp = Find(j);
-			while (j >= 0 && comp > key)
+			key = Find(i);
+			j = i - 1;
+			comp = Find(j);
+			while (j >= 0 && comp->m_Data > key->m_Data)
 			{
-				Swap(comp, key);
+				Swap(key, comp);
+				j = j - 1;
+				comp = Find(j);
 			}
 		}
 	}

@@ -2,8 +2,8 @@
 #include <vector>
 #include <crtdbg.h>
 #include "LinkedLists.h"
-#include "DynamicArray.h"
-#include "Stack.h"
+//#include "DynamicArray.h"
+//#include "Stack.h"
 #include "Deque.h"
 
 int main()
@@ -19,7 +19,8 @@ int main()
 	List.AddBack(1);
 	List.AddBack(4);
 
-	List.Sort();
+	List.Sort(List.GetCount());
+	
 
 
 
