@@ -1,5 +1,7 @@
 #pragma once
+#include <iostream>
 #include <memory>
+#include <stdexcept>
 template <typename T>
 class DynamicArray
 {
@@ -71,12 +73,19 @@ public:
 
 	T& operator[](int nIndex)
 	{
+		if (nIndex >= m_nUsed)
+			throw std::out_of_range("out of range");
 		return m_pData[nIndex];
 	}
 
 	int GetSize()
 	{
 		return m_nUsed;
+	}
+
+	void Clear()
+	{
+		m_nUsed = 0;
 	}
 
 private:
